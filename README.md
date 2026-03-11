@@ -1,16 +1,6 @@
 1. Create a simple "Hello World" application in Android Studio. Explain the purpose of the MainActivity and the activity_main.xml file.
    `MainActivity.kt`
-   (```xml
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Hello World!"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.5" />
-```)
+   ```xml ```
    
    
 3. Create a login screen with EditText fields for username and password,
