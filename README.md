@@ -36,7 +36,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
  ```
    
-3. Create a login screen with EditText fields for username and password,
+2. Create a login screen with EditText fields for username and password,
 and a Button to submit. Include validation for empty fields.
 
 `MainActivity.kt`
@@ -111,14 +111,108 @@ class MainActivity : AppCompatActivity() {
 </LinearLayout>
 ```
 
-
-5. Create an android application to display Alert Dialog on pressing the
+3. Create an android application to display Alert Dialog on pressing the
 Back button.
-``` ```
+`MainActivity.kt`
+```
+package com.example.alertdialogback
+
+import android.os.Bundle
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
+
+class MainActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+    }
+
+    override fun onBackPressed() {
+        AlertDialog.Builder(this)
+            .setTitle("Exit App")
+            .setMessage("Are you sure you want to exit?")
+            .setPositiveButton("Yes") { _, _ ->
+                finish()
+            }
+            .setNegativeButton("No", null)
+            .show()
+    }
+}
+ ```
+`activity_main.xml`
+``` 
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"/>
+```
 5. Create an android application which automatically notify the user when
 Aeroplane mode is turned on or off using broadcast receiver.
-   ``
-   ``` ```
+   `AndroidManifest.xml`
+   ```
+   <?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.airplanemode">
+
+    <application
+        android:allowBackup="true"
+        android:label="AirplaneModeApp"
+        android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
+
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <receiver android:name=".AirplaneModeReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.AIRPLANE_MODE"/>
+            </intent-filter>
+        </receiver>
+
+    </application>
+    </manifest>
+```
+   `MainActivity.kt`
+```package com.example.airplanemode
+
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+    }
+} ```
+
+   `AirplaneModeReceiver.kt`
+
+   ``` package com.example.airplanemode
+
+import android.content.BroadcastReceiver
+import android.content.Context
+import android.content.Intent
+import android.widget.Toast
+
+class AirplaneModeReceiver : BroadcastReceiver() {
+
+    override fun onReceive(context: Context, intent: Intent) {
+        val isOn = intent.getBooleanExtra("state", false)
+
+        if (isOn) {
+            Toast.makeText(context, "Airplane Mode ON", Toast.LENGTH_LONG).show()
+        } else {
+            Toast.makeText(context, "Airplane Mode OFF", Toast.LENGTH_LONG).show()
+        }
+    }
+} ```
+   `activity_main.xml`
+   ``````
+
 
 7. Explain the Android Activity life cycle in detail. Implement a simple app that
 logs the lifecycle methods (onCreate(), onStart(), onResume(), onPause(),
@@ -126,11 +220,23 @@ onStop(), onDestroy()).
 
 ``
 ``` ```
+``
+``` ```
 
 9. Insert the new contents in the following resources and demonstrate their
 uses in the android application
 Android Resources: (Color, Theme, String, Drawable, Dimension, Image)
 
+``
+``` ```
+``
+``` ```
+``
+``` ```
+``
+``` ```
+``
+``` ```
 ``
 ``` ```
 
@@ -141,7 +247,8 @@ registration form:
 your layout XML.
 ``
 ``` ```
-
+``
+``` ```
 13. Design a form with a RadioGroup for selecting the gender
 (Male/Female/Other). Include a Submit button that shows the selected gender
 in a TextView.
