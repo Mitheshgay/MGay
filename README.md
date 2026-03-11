@@ -39,8 +39,43 @@
 3. Create a login screen with EditText fields for username and password,
 and a Button to submit. Include validation for empty fields.
 
-``
-``` ```
+`MainActivity.kt`
+```
+ package com.example.loginapp
+
+import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+
+class MainActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        val username = findViewById<EditText>(R.id.etUsername)
+        val password = findViewById<EditText>(R.id.etPassword)
+        val loginBtn = findViewById<Button>(R.id.btnLogin)
+
+        loginBtn.setOnClickListener {
+            val user = username.text.toString().trim()
+            val pass = password.text.toString().trim()
+
+            if (user.isEmpty()) {
+                username.error = "Enter Username"
+                username.requestFocus()
+            } else if (pass.isEmpty()) {
+                password.error = "Enter Password"
+                password.requestFocus()
+            } else {
+                Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+}
+```
 
 5. Create an android application to display Alert Dialog on pressing the
 Back button.
