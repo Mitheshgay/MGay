@@ -2,13 +2,14 @@
    `MainActivity.kt`
    
    ```kotlin
-   package com.example.helloworld import android.os.Bundle import androidx.appcompat.app.AppCompatActivity class MainActivity : AppCompatActivity() {
+   package com.example.helloworld
+   import android.os.Bundle
+   import androidx.appcompat.app.AppCompatActivity
+   class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-    }
-}  ```
-   
+    } } ```
    
 3. Create a login screen with EditText fields for username and password,
 and a Button to submit. Include validation for empty fields.
