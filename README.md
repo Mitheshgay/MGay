@@ -1,6 +1,6 @@
 1. Create a simple "Hello World" application in Android Studio. Explain the purpose of the MainActivity and the activity_main.xml file.
    `MainActivity.kt`
-   (``` hello)
+   (``` hello``` )
    
    
 3. Create a login screen with EditText fields for username and password,
