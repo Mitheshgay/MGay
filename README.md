@@ -1,7 +1,8 @@
 1. Create a simple "Hello World" application in Android Studio. Explain the purpose of the MainActivity and the activity_main.xml file.
    
    `MainActivity.kt`
-   ```kotlin
+    __________________________________________________________________________________
+   ```
    package com.example.helloworld
    import android.os.Bundle
    import androidx.appcompat.app.AppCompatActivity
@@ -13,9 +14,10 @@
    } ```
 
 .
-   activity_main.xml
+   `activity_main.xml`
+    __________________________________________________________________________________
 
-   ```xml
+   ```
    <?xml version="1.0" encoding="utf-8"?>
    <androidx.constraintlayout.widget.ConstraintLayout 
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -40,6 +42,7 @@
 and a Button to submit. Include validation for empty fields.
 
 `MainActivity.kt`
+ __________________________________________________________________________________
 ```
  package com.example.loginapp
 
@@ -78,6 +81,7 @@ class MainActivity : AppCompatActivity() {
 ```
 .
 `activity_main.xml`
+ __________________________________________________________________________________
 ``` 
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -114,6 +118,7 @@ class MainActivity : AppCompatActivity() {
 3. Create an android application to display Alert Dialog on pressing the
 Back button.
 `MainActivity.kt`
+ __________________________________________________________________________________
 ```
 package com.example.alertdialogback
 
@@ -141,6 +146,7 @@ class MainActivity : AppCompatActivity() {
 }
  ```
 `activity_main.xml`
+ __________________________________________________________________________________
 ``` 
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -150,9 +156,10 @@ class MainActivity : AppCompatActivity() {
 5. Create an android application which automatically notify the user when
 Aeroplane mode is turned on or off using broadcast receiver.
    `AndroidManifest.xml`
+   __________________________________________________________________________________
    ```
    <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+   <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.airplanemode">
 
     <application
@@ -175,9 +182,13 @@ Aeroplane mode is turned on or off using broadcast receiver.
 
     </application>
     </manifest>
-```
+    ```
+   
    `MainActivity.kt`
-```package com.example.airplanemode
+__________________________________________________________________________________
+
+```
+package com.example.airplanemode
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -189,9 +200,10 @@ class MainActivity : AppCompatActivity() {
     }
 } ```
 
-   `AirplaneModeReceiver.kt`
+   AirplaneModeReceiver.kt
+__________________________________________________________________________________
 
-   ``` package com.example.airplanemode
+``` package com.example.airplanemode
 
 import android.content.BroadcastReceiver
 import android.content.Context
@@ -211,7 +223,7 @@ class AirplaneModeReceiver : BroadcastReceiver() {
     }
 } ```
    `activity_main.xml`
-   ``````
+   ``` ```
 
 
 7. Explain the Android Activity life cycle in detail. Implement a simple app that
@@ -219,6 +231,7 @@ logs the lifecycle methods (onCreate(), onStart(), onResume(), onPause(),
 onStop(), onDestroy()).
 
 ``
+
 ``` ```
 ``
 ``` ```
