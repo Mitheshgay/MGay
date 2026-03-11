@@ -1,6 +1,6 @@
 1. Create a simple "Hello World" application in Android Studio. Explain the purpose of the MainActivity and the activity_main.xml file.
-   `MainActivity.kt`
    
+   `MainActivity.kt`
    ```kotlin
    package com.example.helloworld
    import android.os.Bundle
