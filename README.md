@@ -12,7 +12,8 @@
     }
    } ```
 
-   `activity_main.xml`
+()
+   activity_main.xml
 
    ```xml
    <?xml version="1.0" encoding="utf-8"?>
@@ -32,7 +33,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
-        </androidx.constraintlayout.widget.ConstraintLayout> ```
+        </androidx.constraintlayout.widget.ConstraintLayout>
+ ```
    
 3. Create a login screen with EditText fields for username and password,
 and a Button to submit. Include validation for empty fields.
